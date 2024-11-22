@@ -39,11 +39,7 @@ namespace WebApp.Pages.Estudiante
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
+        
             context.Estudiantes.Update(Estudiantes);
             await context.SaveChangesAsync();
 
