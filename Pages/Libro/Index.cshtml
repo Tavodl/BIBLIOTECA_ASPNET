@@ -1,0 +1,35 @@
+﻿@page
+@model WebApp.Pages.Libro.IndexLibro
+@{
+    ViewData["Title"] = "Libros";
+}
+
+<h1>Lista de Libros</h1>
+<hr/>
+@* <a asp-page="Create" class="btn btn-success float-end">Create</a> *@
+<table class="table table-responsive table-striped table-hover align-middle">
+    <thead>
+        <tr class="text-center">
+            <th>@Html.DisplayNameFor(model => model.Libros[0].TITULO)</th>
+            <th>@Html.DisplayNameFor(model => model.Libros[0].EDITORIAL)</th>
+            <th>@Html.DisplayNameFor(model => model.Libros[0].AREA)</th>
+            @* <th>Actions</th> *@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var libro in Model.Libros)
+        {
+            <tr class="text-center">
+                <td>@Html.DisplayFor(model => libro.TITULO)</td>
+                <td>@Html.DisplayFor(model => libro.EDITORIAL)</td>
+                <td>@Html.DisplayFor(model => libro.AREA)</td>
+
+                @* <td>
+                    <a asp-page="./Edit" asp-route-id="@libro.IDLIBRO" class="btn btn-primary">Edit</a>
+                    <a asp-page="./Detail" asp-route-id="@libro.IDLIBRO"  class="btn btn-success">Details</a>
+                    <a asp-page="./Delete" asp-route-id="@libro.IDLIBRO" class="btn btn-danger">Delete</a>
+                </td> *@
+            </tr>
+        }
+    </tbody>
+</table>

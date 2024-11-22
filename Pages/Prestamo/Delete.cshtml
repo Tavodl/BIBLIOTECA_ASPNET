@@ -1,0 +1,54 @@
+﻿@page
+@model WebApp.Pages.Prestamo.DeletePrestamo
+@{
+    ViewData["Title"] = "Eliminar Prestamo";
+}
+
+<h3>Are you sure that you want to delete this?</h3>
+
+<div>
+    <dl class="row">
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Prestamos.IDPRESTAMO)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Prestamos.IDPRESTAMO)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Prestamos.IDLECTOR)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Prestamos.IDLECTOR)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Prestamos.IDLIBRO)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Prestamos.IDLIBRO)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Prestamos.FECHAPRESTAMO)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Prestamos.FECHAPRESTAMO)
+        </dd>
+           <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Prestamos.FECHAENTREGA)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Prestamos.FECHAENTREGA)
+        </dd>
+           <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Prestamos.DEVUELTO)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Prestamos.DEVUELTO)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Prestamos.IDPRESTAMO" />
+        <a asp-page="./Index" class="btn btn-primary">Back</a>
+        <input type="submit" value="Delete" class="btn btn-danger" />
+    </form>
+</div>

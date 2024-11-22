@@ -1,0 +1,40 @@
+﻿@page
+@model WebApp.Pages.Prestamo.IndexPrestamo
+@{
+    ViewData["Title"] = "Préstamos";
+}
+
+<h1>Lista de Préstamos</h1>
+<hr/>
+<a asp-page="Create" class="btn btn-success float-end">Create</a>
+<table class="table table-responsive table-striped table-hover align-middle">
+    <thead>
+        <tr class="text-center">
+            <th>@Html.DisplayNameFor(model => model.Prestamos[0].IDPRESTAMO)</th>
+            <th>ESTUDIANTE</th> <!-- Mostrar nombre del estudiante -->
+            <th>LIBRO</th> <!-- Mostrar título del libro -->
+            <th>@Html.DisplayNameFor(model => model.Prestamos[0].FECHAPRESTAMO)</th>
+            <th>@Html.DisplayNameFor(model => model.Prestamos[0].FECHAENTREGA)</th>
+            <th>@Html.DisplayNameFor(model => model.Prestamos[0].DEVUELTO)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var prestamo in Model.Prestamos)
+        {
+            <tr class="text-center">
+                <td>@Html.DisplayFor(model => prestamo.IDPRESTAMO)</td>
+                <td>@prestamo.Estudiante.NOMBRE</td> <!-- Mostrar nombre del estudiante -->
+                <td>@prestamo.Libro.TITULO</td> <!-- Mostrar título del libro -->
+                <td>@Html.DisplayFor(model => prestamo.FECHAPRESTAMO)</td>
+                <td>@Html.DisplayFor(model => prestamo.FECHAENTREGA)</td>
+                <td>@(prestamo.DEVUELTO ? "Sí" : "No")</td> <!-- Mostrar si se devolvió -->
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@prestamo.IDPRESTAMO" class="btn btn-primary">Edit</a>
+                    @* <a asp-page="./Detail" asp-route-id="@prestamo.IDPRESTAMO"  class="btn btn-success">Details</a> *@
+                    <a asp-page="./Delete" asp-route-id="@prestamo.IDPRESTAMO" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

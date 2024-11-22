@@ -1,0 +1,47 @@
+﻿@page
+@model WebApp.Pages.Prestamo.DeletePrestamo
+@{
+    ViewData["Title"] = "Detalle Prestamo";
+}
+
+<h1>Detalles</h1>
+<hr/>
+<div>
+    <dl class="row">
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Prestamos.IDLECTOR)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Prestamos.IDLECTOR)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Prestamos.IDLIBRO)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Prestamos.IDLIBRO)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Prestamos.FECHAPRESTAMO)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Prestamos.FECHAPRESTAMO)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Prestamos.FECHAENTREGA)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Prestamos.FECHAENTREGA)
+        </dd>
+           <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Prestamos.DEVUELTO)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Prestamos.DEVUELTO)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-page="./Index" class="btn btn-danger">Back</a>
+    <a asp-page="./Edit" asp-route-id="@Model.Prestamos.IDPRESTAMO" class="btn btn-primary">Edit</a>
+</div>

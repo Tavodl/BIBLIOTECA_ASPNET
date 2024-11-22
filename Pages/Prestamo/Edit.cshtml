@@ -1,0 +1,58 @@
+﻿@page
+@model WebApp.Pages.Prestamo.EditPrestamo
+@{
+    ViewData["Title"] = "Editar Prestamo";
+}
+
+<h1>Editar Prestamo</h1> 
+<hr/>
+<div class="row">
+    <div class="col-4">
+<form method="post">
+    <input type="hidden" asp-for="Prestamos.IDPRESTAMO" />
+
+    <div class="form-group">
+        <label asp-for="Prestamos.IDLECTOR"></label>
+        @Html.DropDownListFor(
+            model => model.Prestamos.IDLECTOR, 
+            Model.Lectores, 
+            "Seleccione un lector", 
+            new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Prestamos.IDLIBRO"></label>
+        @Html.DropDownListFor(
+            model => model.Prestamos.IDLIBRO, 
+            Model.Libros, 
+            "Seleccione un libro", 
+            new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Prestamos.FECHAPRESTAMO"></label>
+        <input asp-for="Prestamos.FECHAPRESTAMO" class="form-control" type="date"/>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Prestamos.FECHAENTREGA"></label>
+        <input asp-for="Prestamos.FECHAENTREGA" class="form-control" type="date"/>
+    </div>
+
+<br>
+    <div class="form-check">
+    <input asp-for="Prestamos.DEVUELTO" class="form-check-input" type="checkbox"/>
+    <label asp-for="Prestamos.DEVUELTO" class="form-check-label"></label>
+    </div>
+    
+<br>
+<div class="form-group mt-2">
+                <a asp-page="Index" class="btn btn-danger">Back</a>
+                <input type="submit" value="Guardar" class="btn btn-primary"/>
+</div>
+    <br>
+</form>
+    </div>
+</div>
+
+

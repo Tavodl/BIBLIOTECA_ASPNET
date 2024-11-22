@@ -1,0 +1,48 @@
+﻿@page
+@model WebApp.Pages.Estudiante.DeleteEstudiante
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Seguro que quiere eliminar?</h3>
+
+<div>
+    <dl class="row">
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Estudiantes.CI)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Estudiantes.CI)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Estudiantes.NOMBRE)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Estudiantes.NOMBRE)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Estudiantes.DIRECCION)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Estudiantes.DIRECCION)
+        </dd>
+          <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Estudiantes.CARRERA)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Estudiantes.CARRERA)
+        </dd>
+          <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Estudiantes.EDAD)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Estudiantes.EDAD)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Estudiantes.IDLECTOR" />
+        <a asp-page="./Index" class="btn btn-primary">Back</a>
+        <input type="submit" value="Delete" class="btn btn-danger" />
+    </form>
+</div>

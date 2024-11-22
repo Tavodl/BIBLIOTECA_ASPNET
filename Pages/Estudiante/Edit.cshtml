@@ -1,0 +1,52 @@
+﻿@page
+@model WebApp.Pages.Estudiante.EditEstudiante
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+<hr />
+
+<div class="row">
+    <div class="col-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Estudiantes.IDLECTOR" />
+
+            <div class="form-group">
+                <label asp-for="Estudiantes.CI" class="control-label"></label>
+                <input asp-for="Estudiantes.CI" class="form-control" />
+                <span asp-validation-for="Estudiantes.CI" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <label asp-for="Estudiantes.NOMBRE" class="control-label"></label>
+                <input asp-for="Estudiantes.NOMBRE" class="form-control" />
+                <span asp-validation-for="Estudiantes.NOMBRE" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <label asp-for="Estudiantes.DIRECCION" class="control-label"></label>
+                <input asp-for="Estudiantes.DIRECCION" class="form-control" />
+                <span asp-validation-for="Estudiantes.DIRECCION" class="text-danger"></span>
+            </div>
+              <div class="form-group mt-2">
+                <label asp-for="Estudiantes.CARRERA" class="control-label"></label>
+                <input asp-for="Estudiantes.CARRERA" class="form-control" />
+                <span asp-validation-for="Estudiantes.CARRERA" class="text-danger"></span>
+            </div>  <div class="form-group mt-2">
+                <label asp-for="Estudiantes.EDAD" class="control-label"></label>
+                <input asp-for="Estudiantes.EDAD" class="form-control" />
+                <span asp-validation-for="Estudiantes.EDAD" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <a asp-page="./Index" class="btn btn-danger">Back</a>
+                <input type="submit" value="Update" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,47 @@
+﻿@page
+@model WebApp.Pages.Estudiante.DetailEstudiante
+@{
+    ViewData["Title"] = "Details Empleado";
+}
+
+<h1>Details</h1>
+<hr/>
+<div>
+    <dl class="row">
+         <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Estudiantes.CI)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Estudiantes.CI)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Estudiantes.NOMBRE)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Estudiantes.NOMBRE)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Estudiantes.DIRECCION)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Estudiantes.DIRECCION)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Estudiantes.CARRERA)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Estudiantes.CARRERA)
+        </dd>
+          <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Estudiantes.EDAD)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Estudiantes.EDAD)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-page="./Index" class="btn btn-danger">Back</a>
+    <a asp-page="./Edit" asp-route-id="@Model.Estudiantes.IDLECTOR" class="btn btn-primary">Edit</a>
+</div>
